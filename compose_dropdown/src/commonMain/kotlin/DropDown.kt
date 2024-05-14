@@ -15,6 +15,8 @@ import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.rounded.ArrowLeft
+import androidx.compose.material.icons.automirrored.rounded.ArrowRight
 import androidx.compose.material.icons.rounded.ArrowLeft
 import androidx.compose.material.icons.rounded.ArrowRight
 import androidx.compose.runtime.Composable
@@ -241,7 +243,7 @@ public fun CascadeHeaderItem(
 ) {
     MenuItem(onClick = { onClick() }) {
         MenuItemIcon(
-            icon = Icons.Rounded.ArrowLeft,
+            icon = Icons.AutoMirrored.Rounded.ArrowLeft,
             tint = contentColor.copy(alpha = ContentAlpha.medium),
         )
         Spacer(modifier = Modifier.width(4.dp))
@@ -282,7 +284,7 @@ public fun <T> ParentItem(
             color = contentColor,
         )
         Space()
-        MenuItemIcon(icon = Icons.Rounded.ArrowRight, tint = contentColor)
+        MenuItemIcon(icon = Icons.AutoMirrored.Rounded.ArrowRight, tint = contentColor)
     }
 }
 
