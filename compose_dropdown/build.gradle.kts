@@ -52,7 +52,9 @@ kotlin {
         }
     }
 }
-
+compose {
+    kotlinCompilerPlugin = "org.jetbrains.kotlin:kotlin-compose-compiler-plugin-embeddable:${libs.versions.kotlin.get()}"
+}
 android {
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     namespace = "com.myapplication.common"
@@ -181,46 +183,49 @@ publishing {
             }
         }
     }
-    publications.withType<MavenPublication> {
-        artifact(javadocJar) // Required a workaround. See below
-        pom {
-            url = "https://github.com/vickyleu/${projectName}"
-            name = projectName
-            description = """
+    afterEvaluate {
+        publications.withType<MavenPublication> {
+            artifact(javadocJar) // Required a workaround. See below
+            artifactId = artifactId.replace(project.name, projectName.lowercase())
+            pom {
+                url = "https://github.com/vickyleu/${projectName}"
+                name = projectName
+                description = """
                 Visit the project on GitHub to learn more.
             """.trimIndent()
-            inceptionYear = "2024"
-            licenses {
-                license {
-                    name = "Apache-2.0 License"
-                    url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+                inceptionYear = "2024"
+                licenses {
+                    license {
+                        name = "Apache-2.0 License"
+                        url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+                    }
                 }
-            }
-            developers {
-                developer {
-                    id = "ranbirk66"
-                    name = "Ranbir Singh"
-                    email = ""
-                    roles = listOf("Mobile Developer")
-                    timezone = "GMT+8"
+                developers {
+                    developer {
+                        id = "ranbirk66"
+                        name = "Ranbir Singh"
+                        email = ""
+                        roles = listOf("Mobile Developer")
+                        timezone = "GMT+8"
+                    }
                 }
-            }
-            contributors {
-                // contributor {}
-            }
-            scm {
-                tag = "HEAD"
-                url = "https://github.com/vickyleu/${projectName}"
-                connection = "scm:git:github.com/vickyleu/${projectName}.git"
-                developerConnection = "scm:git:ssh://github.com/vickyleu/${projectName}.git"
-            }
-            issueManagement {
-                system = "GitHub"
-                url = "https://github.com/vickyleu/${projectName}/issues"
-            }
-            ciManagement {
-                system = "GitHub Actions"
-                url = "https://github.com/vickyleu/${projectName}/actions"
+                contributors {
+                    // contributor {}
+                }
+                scm {
+                    tag = "HEAD"
+                    url = "https://github.com/vickyleu/${projectName}"
+                    connection = "scm:git:github.com/vickyleu/${projectName}.git"
+                    developerConnection = "scm:git:ssh://github.com/vickyleu/${projectName}.git"
+                }
+                issueManagement {
+                    system = "GitHub"
+                    url = "https://github.com/vickyleu/${projectName}/issues"
+                }
+                ciManagement {
+                    system = "GitHub Actions"
+                    url = "https://github.com/vickyleu/${projectName}/actions"
+                }
             }
         }
     }
