@@ -16,7 +16,7 @@ coroutines-bom = "1.8.0"
 jvmTarget = "17"
 #// https://mvnrepository.com/artifact/org.jetbrains.compose.material/material
 #noinspection GradleDependency
-compose-plugin = "1.6.2"
+compose-plugin = "1.6.10-rc03"
 
 
 [libraries]
