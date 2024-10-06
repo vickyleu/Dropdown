@@ -1,22 +1,22 @@
 [versions]
-activityCompose = "1.9.0"
-agp = "8.4.0"
-appcompat = "1.6.1"
+activityCompose = "1.9.2"
+agp = "8.7.0"
+appcompat = "1.7.0"
 coreKtx = "1.13.1"
-kotlin = "2.0.0-RC3"
-ktlint = "12.1.0"
+kotlin = "2.0.20"
+ktlint = "12.1.1"
 maven_publish = "0.28.0"
 dokka = "1.9.20"
 annotations = "23.0.0"
 android-compileSdk = "34"
 android-minSdk = "24"
 android-targetSdk = "34"
-jetpack-compose-bom = "2024.05.00"
-coroutines-bom = "1.8.0"
+jetpack-compose-bom = "2024.09.03"
+coroutines-bom = "1.9.0"
 jvmTarget = "17"
 #// https://mvnrepository.com/artifact/org.jetbrains.compose.material/material
 #noinspection GradleDependency
-compose-plugin = "1.6.10-rc03"
+compose-plugin = "1.7.0-rc01"
 
 
 [libraries]
