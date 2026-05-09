@@ -4,9 +4,6 @@ plugins {
     alias(libs.plugins.jetbrains.compose)
     alias(libs.plugins.compose.compiler)
 }
-compose {
-    kotlinCompilerPlugin = "org.jetbrains.kotlin:kotlin-compose-compiler-plugin-embeddable:${libs.versions.kotlin.get()}"
-}
 kotlin {
     androidTarget()
     sourceSets {

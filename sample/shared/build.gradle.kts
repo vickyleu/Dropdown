@@ -4,9 +4,6 @@ plugins {
     alias(libs.plugins.jetbrains.compose)
     alias(libs.plugins.compose.compiler)
 }
-compose {
-    kotlinCompilerPlugin = "org.jetbrains.kotlin:kotlin-compose-compiler-plugin-embeddable:${libs.versions.kotlin.get()}"
-}
 kotlin {
     applyDefaultHierarchyTemplate()
     androidTarget()
@@ -30,7 +27,6 @@ kotlin {
             @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
             implementation(compose.components.resources)
             api(projects.composeDropdown)
-            implementation(project.dependencies.platform(libs.compose.bom))
             implementation(project.dependencies.platform(libs.coroutines.bom))
             implementation(project.dependencies.platform(libs.kotlin.bom))
         }

@@ -10,6 +10,9 @@ include(":sample:shared")
 
 pluginManagement {
     repositories {
+        maven("https://maven.aliyun.com/repository/google")
+        maven("https://maven.aliyun.com/repository/public")
+        maven("https://maven.aliyun.com/repository/gradle-plugin")
         gradlePluginPortal()
         mavenCentral()
         google()
@@ -19,11 +22,14 @@ pluginManagement {
 }
 
 plugins {
-    id("org.gradle.toolchains.foojay-resolver-convention") version "0.7.0"
+    id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
 }
 
 dependencyResolutionManagement {
     repositories {
+        maven("https://maven.aliyun.com/repository/google")
+        maven("https://maven.aliyun.com/repository/public")
+        maven("https://maven.aliyun.com/repository/gradle-plugin")
         mavenCentral()
         google()
         maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
